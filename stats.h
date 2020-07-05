@@ -78,7 +78,7 @@ unsigned int find_mean(unsigned char* arr, unsigned int len);
  * 				need to be printed
  * @param len length of the array
  *
- * @return median of unsigned type
+ * @return median of unsigned int type
  */
 unsigned int find_median(unsigned char* arr, unsigned int len);
 
@@ -92,7 +92,7 @@ unsigned int find_median(unsigned char* arr, unsigned int len);
  * 				need to be printed
  * @param len length of the array
  *
- * @return maximum value of unsigned type
+ * @return maximum value of unsigned int type
  */
 unsigned int find_maximum(unsigned char* arr, unsigned int len);
 
@@ -106,7 +106,7 @@ unsigned int find_maximum(unsigned char* arr, unsigned int len);
  * 				need to be printed
  * @param len length of the array
  *
- * @return minimum value of unsigned type
+ * @return minimum value of unsigned int type
  */
 unsigned int find_minimum(unsigned char* arr, unsigned int len);
 
