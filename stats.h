@@ -25,17 +25,104 @@
 /* Add Your Declarations and Function Comments here */ 
 
 /**
- * @brief <Add Brief Description of Function Here>
+ * @brief Function to print the contents of an array
  *
- * <Add Extended Description Here>
+ * This function inputs the array and its size and
+ * iterates through a loop to print all the elements
+ * of the array
  *
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
+ * @param unsigned char *arr The array variable
+ * 				need to be printed
+ * @param len length of the array
  *
- * @return <Add Return Informaiton here>
+ * @return nothing to return
  */
+void print_array(unsigned char* arr, unsigned int len);
 
+/**
+ * @brief Function to sort the contents of an array
+ *
+ * This function inputs the array and its size and
+ * iterates through a loop to sort the elements
+ * of the array
+ *
+ * @param unsigned char *arr The array variable
+ * 				need to be printed
+ * @param len length of the array
+ *
+ * @return nothing to return
+ */
+void sort_array(unsigned char* arr, unsigned int len);
 
+/**
+ * @brief Function to find the mean
+ *
+ * This function takes an array of data points and finds
+ * out the mean
+ *
+ * @param unsigned char *arr The array variable
+ * 				need to be printed
+ * @param len length of the array
+ *
+ * @return mean of type unsigned int
+ */
+unsigned int find_mean(unsigned char* arr, unsigned int len);
+
+/**
+ * @brief Function to find the median
+ *
+ * This function takes an array of data points and finds
+ * out the median
+ *
+ * @param unsigned char *arr The array variable
+ * 				need to be printed
+ * @param len length of the array
+ *
+ * @return median of unsigned type
+ */
+unsigned int find_median(unsigned char* arr, unsigned int len);
+
+/**
+ * @brief Function to find the maximum value
+ *
+ * This function takes an array of data points and finds
+ * out the the maximum value
+ *
+ * @param unsigned char *arr The array variable
+ * 				need to be printed
+ * @param len length of the array
+ *
+ * @return maximum value of unsigned type
+ */
+unsigned int find_maximum(unsigned char* arr, unsigned int len);
+
+/**
+ * @brief Function to find the minimum value
+ *
+ * This function takes an array of data points and finds
+ * out the the minimum value
+ *
+ * @param unsigned char *arr The array variable
+ * 				need to be printed
+ * @param len length of the array
+ *
+ * @return minimum value of unsigned type
+ */
+unsigned int find_minimum(unsigned char* arr, unsigned int len);
+
+/**
+ * @brief Function to print statistical data elements for
+ * 		an array of data points
+ *
+ * This function inputs the array and its size and prints
+ * out the mean, median, maximum and minimum value of the
+ * dataset.
+ *
+ * @param unsigned char *arr The array variable
+ * 				need to be printed
+ * @param len length of the array
+ *
+ * @return nothing to return
+ */
+void print_statistics(unsigned char* arr, unsigned int len);
 #endif /* __STATS_H__ */
