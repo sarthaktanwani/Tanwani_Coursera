@@ -41,7 +41,11 @@ void main() {
   printf("Index\tValue\n");
   print_array(test, SIZE);
 
+  printf("Printng the test array after sorting!\n\n");
+  printf("Index\tValue\n");
+  sort_array(test, SIZE);
   print_array(test, SIZE);
+
 
   print_statistics(test, SIZE);
 }
@@ -66,7 +70,7 @@ void sort_array(unsigned char* arr, unsigned int len)
 	{
 		for(j = 0; j < (len-i-1); j++)
 		{
-			if(arr[j] > arr[j+1])
+			if(arr[j] < arr[j+1])
 			{
 				temp = arr[j];
 				arr[j] = arr[j+1];
