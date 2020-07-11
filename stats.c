@@ -41,12 +41,11 @@ void main() {
   printf("Index\tValue\n");
   print_array(test, SIZE);
 
-  printf("Printng the test array after sorting!\n\n");
+  printf("Printng the test array after sorting\n\n");	//Printing once after sorting
   printf("Index\tValue\n");
   sort_array(test, SIZE);
   print_array(test, SIZE);
-
-
+  
   print_statistics(test, SIZE);
 }
 
