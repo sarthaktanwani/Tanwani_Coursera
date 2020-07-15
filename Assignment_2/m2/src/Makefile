@@ -104,7 +104,7 @@ build : all
 all: $(TARGET).out
 
 $(TARGET).out: $(OBJS) $(DEPS)
-	$(CC) $(CFLAGS) $(OBJS) $(INCLUDES) $(LDFLAGS) -o $@
+	$(CC) $(CFLAGS) $(OBJS) $(INCLUDES) $(LDFLAGS) -o $(TARGET).out
 	$(SIZE) $(TARGET).out
 
 .PHONY: clean
