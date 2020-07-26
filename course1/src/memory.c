@@ -21,30 +21,80 @@
  *
  */
 #include "memory.h"
+//#include <stdio.h>
+#include <stdint.h>
+#include <stddef.h>
 
 /***********************************************************
  Function Definitions
 ***********************************************************/
-void set_value(char * ptr, unsigned int index, char value){
+void set_value(char * ptr, unsigned int index, char value)
+{
   ptr[index] = value;
 }
 
-void clear_value(char * ptr, unsigned int index){
+void clear_value(char * ptr, unsigned int index)
+{
   set_value(ptr, index, 0);
 }
 
-char get_value(char * ptr, unsigned int index){
+char get_value(char * ptr, unsigned int index)
+{
   return ptr[index];
 }
 
-void set_all(char * ptr, char value, unsigned int size){
+void set_all(char * ptr, char value, unsigned int size)
+{
   unsigned int i;
   for(i = 0; i < size; i++) {
     set_value(ptr, i, value);
   }
 }
 
-void clear_all(char * ptr, unsigned int size){
-  set_all(ptr, 0, size);
+void clear_all(char * ptr, unsigned int size)
+{  
+   set_all(ptr, 0, size);
 }
 
+uint8_t * my_memmove(uint8_t * src, uint8_t * dst, size_t length)
+{
+	char *pcSrc = (char *) src;
+	char *pcDstn = (char *) dst;
+	
+	if(pcSrc == NULL || pcDstn == NULL)
+	{
+		return NULL;
+	}
+	if((pcDstn > pcSrc) && (pcDstn < pcSrc + length))
+	{
+		for(pcDstn += length, pcSrc += length; length--;)
+		{
+			*--pcDstn = *--pcSrc;
+		}
+	}
+	else
+	{
+		while(length--)
+		{
+			*pcSrc++ = *pcDstn++;
+		}
+	}
+	return dst;
+}
+
+uint8_t * my_memcpy(uint8_t * src, uint8_t * dst, size_t length)
+{
+	char *pcSrc 	= (char *) src;
+	char *pcDstn 	= (char *) dst;
+	
+	if(pcSrc == NULL || pcDstn == NULL)
+	{
+		return NULL;
+	}
+	
+	while(length--)
+	{
+		*pcSrc++ = *pcDstn++;
+	}
+	return dst;
+}

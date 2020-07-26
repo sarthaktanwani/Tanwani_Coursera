@@ -21,13 +21,14 @@
 
 
 
-#include <stdio.h>
+//#include <stdio.h>
+#include "platform.h"
 #include "stats.h"
 
 /* Size of the Data Set */
 #define SIZE (40)
 
-void main() {
+/*int main(void) {
 
   unsigned char test[SIZE] = { 34, 201, 190, 154,   8, 194,   2,   6,
                               114, 88,   45,  76, 123,  87,  25,  23,
@@ -35,9 +36,9 @@ void main() {
                               201,   6,  12,  60,   8,   2,   5,  67,
                                 7,  87, 250, 230,  99,   3, 100,  90};
 
-  /* Other Variable Declarations Go Here */
+  *//* Other Variable Declarations Go Here */
   /* Statistics and Printing Functions Go Here */
-  printf("Printing the test array\n\n");
+  /*printf("Printing the test array\n\n");
   printf("Index\tValue\n");
   print_array(test, SIZE);
 
@@ -47,19 +48,22 @@ void main() {
   print_array(test, SIZE);
   
   print_statistics(test, SIZE);
-}
+	return 0;
+}*/
 
 /* Add other Implementation File Code Here */
 
 void print_array(unsigned char* arr, unsigned int len)
 {
+	#ifdef VERBOSE
 	int i;
 	for(i = 0; i < len; i++)
 	{
-		printf("%d\t", i);
-		printf("%d\n", arr[i]);
+		PRINTF("%d\t", i);
+		PRINTF("%d\n", arr[i]);
 	}
-	printf("\n");
+	PRINTF("\n");
+	#endif
 }
 
 void sort_array(unsigned char* arr, unsigned int len)
@@ -128,9 +132,9 @@ void print_statistics(unsigned char* arr, unsigned int len)
 	max = find_maximum(arr, len);
 	mean = find_mean(arr, len);
 	median = find_median(arr, len);
-	printf("Important information about the dataset is as follows: \n");
-	printf("\nMinimum value in the dataset: %d\n", min);
-	printf("Maximum value in the dataset: %d\n", max);
-	printf("Mean of the dataset: %d\n", mean);
-	printf("Median of the dataset: %d\n", median);
+	PRINTF("Important information about the dataset is as follows: \n");
+	PRINTF("\nMinimum value in the dataset: %d\n", min);
+	PRINTF("Maximum value in the dataset: %d\n", max);
+	PRINTF("Mean of the dataset: %d\n", mean);
+	PRINTF("Median of the dataset: %d\n", median);
 }

@@ -63,7 +63,7 @@ else ifeq ($(PLATFORM), HOST)
 
 endif
 
-TARGET = c1m2
+TARGET = main
 
 CFLAGS = -Wall -Werror -g -O0 -std=c99 -D$(PLATFORM) $(ARMFLAGS)
 
@@ -108,5 +108,7 @@ $(TARGET).out: $(OBJS) $(DEPS)
 	$(SIZE) $(TARGET).out
 
 .PHONY: clean
-clean: 
+clean:
+       	
 	rm -f $(FILES) $(TARGET).out $(TARGET).map $(PPF) $(DEPS) $(OBJS) $(ASF)
+	cd src/ && rm -f $(FILES) $(TARGET).out $(TARGET).map $(PPF) $(DEPS) $(OBJS) $(ASF)
