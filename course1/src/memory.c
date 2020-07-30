@@ -101,5 +101,42 @@ uint8_t * my_memcpy(uint8_t * src, uint8_t * dst, size_t length)
 
 uint8_t * my_memset(uint8_t * src, size_t length, uint8_t value)
 {
-
+	char *pcSrc = (char *)src;
+	if(pcSrc == NULL)
+		return NULL;
+	while(length--)
+	{
+		*pcSrc++ = value;
+	}
+	return src;
 }
+
+uint8_t * my_memzero(uint8_t * src, size_t length)
+{
+	char *pcSrc = (char *) src;
+	if(pcSrc == NULL)
+		return NULL;
+	while(length--)
+	{
+		*pcSrc++ = 0;
+	}
+	return src;
+}
+uint8_t * my_reverse(uint8_t * src, size_t length)
+{
+	char *pcSrc = (char *)src;
+	if(pcSrc == NULL)
+		return NULL;
+	uint8_t temp;
+	for(int i = 0; i < length/2; i++)
+	{
+		temp = *(pcSrc + i);
+		*(pcSrc + i) = *(pcSrc + length - 1 - i);
+		*(pcSrc + length - 1 - i) = temp;
+	}
+	return src;
+}            
+
+uint8_t *reserve_words(size_t length)
+{
+}	
