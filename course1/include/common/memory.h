@@ -94,29 +94,100 @@ void set_all(char * ptr, char value, unsigned int size);
  */
 void clear_all(char * ptr, unsigned int size);
 
+ /**
+ * @brief Moves a value from one address to another 
+ *
+ * Given an source address, destination address and the 
+ * length of bytes to move, it moves the data values
+ * handling any overlapping issues that may occur
+ *
+ * @param src source memory address
+ * @param dst destination memory address
+ * @param length length of bytes to move
+ *
+ * @return pointer to the destination
+ */
+uint8_t * my_memmove(uint8_t * src, uint8_t * dst, size_t length);
+
 /**
- * @brief Clears elements in a data array
+ * @brief Copies a value from one memory address to another 
+ *
+ * Given an source address, destination address and the 
+ * length of bytes to copy, it copies the data values
+ * overlapping of addresses causes data corruption
+ *
+ * @param src source memory address
+ * @param dst destination memory address
+ * @param length length of bytes to move
+ *
+ * @return pointer to the destination
+ */
+uint8_t * my_memcopy(uint8_t * src, uint8_t * dst, size_t length);
+
+/**
+ * @brief Sets a value of a pointer in memory
+ *
+ * Given a pointer to a char data set, this will set a provided
+ * length of indexes into that data set to the value provided.
+ *
+ * @param src source memory address
+ * @param length length of bytes to set
+ * @param value value to write the the locaiton
+ *
+ * @return pointer to the source
+ */
+uint8_t * my_memset(uint8_t * src, size_t length, uint8_t value);
+
+/**
+ * @brief Clears elements in memory
  *
  * Given a pointer to a char data set, this will set a clear a number
  * of elements given the size provided. Clear means to set to zero. 
  *
- * @param ptr Pointer to data array
- * @param size Number of elements to set to zero
+ * @param src source memory address
+ * @param length length of bytes to clear
+ *
+ * @return pointer to source
+ */
+uint8_t * my_memzero(uint8_t * src, size_t length);
+
+/**
+ * @brief Reverses the order of bytes in memory
+ *
+ * Given a pointer to a char data set and the length, this
+ * would reverse the order of bytes in that memory address 
+ * length
+ *
+ * @param src Pointer to source
+ * @param length the length to be reversed
+ *
+ * @return pointer to source
+ */
+uint8_t * my_reverse(uint8_t * src, size_t length);
+
+
+/**
+ * @brief Allocates space for words in dynamic memory
+ *
+ * Given a length, allocates that number of words in 
+ * memory using the malloc function.
+ *
+ * @param length the number of words to be reserved
+ *
+ * @return pointer to source
+ */
+int32_t * reserve_words(size_t length);
+
+/**
+ * @brief Frees space for words in dynamic memory
+ *
+ * Given a source pointer, frees that in 
+ * memory using the free function.
+ *
+ * @param src pointer to source
  *
  * @return void.
  */
-uint8_t * my_memmove(uint8_t * src, uint8_t * dst, size_t length);
-
-uint8_t * my_memcopy(uint8_t * src, uint8_t * dst, size_t length);
-
-uint8_t * my_memset(uint8_t * src, size_t length, uint8_t value);
-
-uint8_t * my_memzero(uint8_t * src, size_t length);
-
-uint8_t * my_reverse(uint8_t * src, size_t length);
-
-int32_t * reserve_words(size_t length);
-
 void free_words(uint32_t * src);
 
 #endif /* __MEMORY_H__ */

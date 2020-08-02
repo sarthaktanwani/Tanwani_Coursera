@@ -32,6 +32,11 @@
 #------------------------------------------------------------------------------
 include sources.mk
 
+#Platform overrides
+PLATFORM=HOST
+COURSE=COURSE1
+VERBOSE=OFF
+
 ifeq ($(PLATFORM), MSP432)
 	
 	#Architecture Specific Flags
@@ -65,10 +70,10 @@ endif
 
 TARGET = main
 MYFLAGS = 
-ifeq ($(VERBOSE), on)
+ifeq ($(VERBOSE), ON)
 MYFLAGS += -DVERBOSE
 endif
-ifeq ($(COURSE), course1)
+ifeq ($(COURSE), COURSE1)
 MYFLAGS += -DCOURSE1
 endif
 

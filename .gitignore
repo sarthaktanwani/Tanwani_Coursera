@@ -1,2 +1,5 @@
-stats.out
+*.d
+*.o
+*.map
+*.out
 log.txt
