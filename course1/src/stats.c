@@ -97,7 +97,7 @@ unsigned int find_minimum(unsigned char* arr, unsigned int len)
 
 void print_statistics(unsigned char* arr, unsigned int len)
 {
-	int min, max, mean, median;
+	/*int min, max, mean, median;
 	min = find_minimum(arr, len);
 	max = find_maximum(arr, len);
 	mean = find_mean(arr, len);
@@ -106,5 +106,5 @@ void print_statistics(unsigned char* arr, unsigned int len)
 	PRINTF("\nMinimum value in the dataset: %d\n", min);
 	PRINTF("Maximum value in the dataset: %d\n", max);
 	PRINTF("Mean of the dataset: %d\n", mean);
-	PRINTF("Median of the dataset: %d\n", median);
+	PRINTF("Median of the dataset: %d\n", median);*/
 }

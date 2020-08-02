@@ -40,7 +40,7 @@ VERBOSE=OFF
 ifeq ($(PLATFORM), MSP432)
 	
 	#Architecture Specific Flags
-	LINKER_FILE = ../msp432p401r.lds
+	LINKER_FILE = msp432p401r.lds
 	CPU = cortex-m4
 	ARCH = thumb
 	SPECS = nosys.specs
