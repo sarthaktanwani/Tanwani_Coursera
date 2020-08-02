@@ -64,8 +64,15 @@ else ifeq ($(PLATFORM), HOST)
 endif
 
 TARGET = main
+MYFLAGS = 
+ifeq ($(VERBOSE), on)
+MYFLAGS += -DVERBOSE
+endif
+ifeq ($(COURSE), course1)
+MYFLAGS += -DCOURSE1
+endif
 
-CFLAGS = -Wall -Werror -g -O0 -std=c99 -D$(PLATFORM) $(ARMFLAGS)
+CFLAGS = -Wall -Werror -g -O0 -std=c99 $(MYFLAGS) -D$(PLATFORM) $(ARMFLAGS)
 
 
 OBJS = $(SOURCES:.c=.o)

@@ -22,8 +22,6 @@
  */
 #include "memory.h"
 //#include <stdio.h>
-#include <stdint.h>
-#include <stddef.h>
 
 /***********************************************************
  Function Definitions
@@ -76,13 +74,13 @@ uint8_t * my_memmove(uint8_t * src, uint8_t * dst, size_t length)
 	{
 		while(length--)
 		{
-			*pcSrc++ = *pcDstn++;
+			*pcDstn++ = *pcSrc++;
 		}
 	}
 	return dst;
 }
 
-uint8_t * my_memcpy(uint8_t * src, uint8_t * dst, size_t length)
+uint8_t * my_memcopy(uint8_t * src, uint8_t * dst, size_t length)
 {
 	char *pcSrc 	= (char *) src;
 	char *pcDstn 	= (char *) dst;
@@ -94,7 +92,7 @@ uint8_t * my_memcpy(uint8_t * src, uint8_t * dst, size_t length)
 	
 	while(length--)
 	{
-		*pcSrc++ = *pcDstn++;
+		*pcDstn++ = *pcSrc++;
 	}
 	return dst;
 }
@@ -137,13 +135,13 @@ uint8_t * my_reverse(uint8_t * src, size_t length)
 	return src;
 }            
 
-int32_t  *reserve_words(size_t length)
+int32_t * reserve_words(size_t length)
 {
 	int32_t *src = (int32_t *)malloc(length * sizeof(int32_t));
 	return src;
 }	
 
-void free_words(int32_t * src)
+void free_words(uint32_t * src)
 {
 	free(src);
 }
