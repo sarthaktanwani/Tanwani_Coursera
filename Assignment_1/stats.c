@@ -53,7 +53,7 @@ void main() {
 
 void print_array(unsigned char* arr, unsigned int len)
 {
-	int i;
+	uint8_t i;
 	for(i = 0; i < len; i++)
 	{
 		printf("%d\t", i);
